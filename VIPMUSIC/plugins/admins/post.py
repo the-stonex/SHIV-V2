@@ -13,4 +13,4 @@ async def copy_messages(_, message):
 
         
         await message.reply_to_message.copy(destination_group_id)
-        await message.reply("𝗗𝗢𝗡𝗘✅")
+        await message.reply("ᴅᴏɴᴇ")
