@@ -29,12 +29,7 @@ def track_markup(_, videoid, user_id, channel, fplay):
             InlineKeyboardButton(text="Replay", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="End", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
-            ),
-        ],
+        
     ]
 
     return buttons
@@ -90,12 +85,7 @@ def stream_markup_timer(_, chat_id, played, dur):
             InlineKeyboardButton(text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
-            ),
-        ],
+        
     ]
 
     return buttons
@@ -126,12 +116,7 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
-            ),
-        ],
+        
     ]
 
     return buttons
@@ -255,12 +240,7 @@ def queue_markup(_, videoid, chat_id):
             InlineKeyboardButton(text="ʀᴇsᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
             InlineKeyboardButton(text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
-            ),
-        ],
+        
     ]
 
     return buttons
