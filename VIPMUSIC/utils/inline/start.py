@@ -12,13 +12,13 @@ def start_panel(_):
             ),
         ],
         [
-            InlineKeyboardButton(text="۞ 𝐇𝙴𝙻𝙿 ۞", callback_data="settings_back_helper"),
+            InlineKeyboardButton(text="۞ ʜᴇʟᴘ ۞", callback_data="settings_back_helper"),
             InlineKeyboardButton(
-                text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"
+                text="☢ sᴇᴛ ☢", callback_data="settings_helper"
             ),
         ],
         [
-            InlineKeyboardButton(text="✡ 𝐆𝚁𝙾𝚄𝙿 ✡", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text="✡ ɢʀᴏᴜᴘ ✡", url=config.SUPPORT_CHAT),
         ],
     ]
     return buttons
@@ -33,11 +33,11 @@ def private_panel(_):
             )
         ],
         [
-            InlineKeyboardButton(text="𝐆𝚁𝙾𝚄𝙿✨", url=config.SUPPORT_CHAT),
+            InlineKeyboardButton(text="ɢʀᴏᴜᴘ✨", url=config.SUPPORT_CHAT),
             InlineKeyboardButton(text="𝐌ᴏʀᴇ🥀", url=config.SUPPORT_CHANNEL),
         ],
         [
-            InlineKeyboardButton(text="۞ 𝐅𝙴𝙰𝚃𝚄𝚁𝙴𝚂 ۞", callback_data="settings_back_helper")
+            InlineKeyboardButton(text="۞ ғᴇᴀᴛᴜʀᴇs ۞", callback_data="settings_back_helper")
         ],
     ]
     return buttons
