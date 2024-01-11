@@ -16,7 +16,7 @@ app.on_message(
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/62de4fe21cc8575298dd9.jpg",
-        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -38,7 +38,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"")
+                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/Vivekkumar07089/Vip-music")
                 ]
             ]
         ),
@@ -55,7 +55,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"")
+                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/Vivekkumar07089/Vip-music")
                 ]
             ]
         ),
