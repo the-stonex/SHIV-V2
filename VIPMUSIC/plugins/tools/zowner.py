@@ -15,13 +15,13 @@ app.on_message(
     & filters.group)
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
+        photo=f"https://telegra.ph/file/62de4fe21cc8575298dd9.jpg",
         caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/THE-VIP-BOY-OP/VIP-MUSIC")
+                        "sʜʀᴇᴇ ʀᴀᴍ", url=f"https://telegra.ph/file/255943864200479c0e90f.jpg")
                 ]
             ]
         ),
@@ -32,13 +32,13 @@ async def help(client: Client, message: Message):
     & filters.group)
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
-        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        photo=f"https://telegra.ph/file/6f93dcaa2c5943253c149.jpg",
+        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/THE-VIP-BOY-OP/VIP-MUSIC")
+                        "🌱ƨσʋяcɛ🌱", url=f"")
                 ]
             ]
         ),
@@ -50,12 +50,12 @@ async def help(client: Client, message: Message):
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
-        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/THE-VIP-BOY-OP/VIP-MUSIC")
+                        "🌱ƨσʋяcɛ🌱", url=f"")
                 ]
             ]
         ),
