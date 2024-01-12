@@ -6,15 +6,11 @@ from VIPMUSIC import app
 
 def start_panel(_):
     buttons = [
+        
         [
+            
             InlineKeyboardButton(
-                text=_["S_B_1"], url=f"https://t.me/{app.username}?startgroup=true"
-            ),
-        ],
-        [
-            InlineKeyboardButton(text="۞ ʜᴇʟᴘ ۞", callback_data="settings_back_helper"),
-            InlineKeyboardButton(
-                text="☢ sᴇᴛ ☢", callback_data="settings_helper"
+                text="☢ sᴇᴛᴛɪɴɢ ☢", callback_data="settings_helper"
             ),
         ],
         [
