@@ -59,29 +59,6 @@ async def ping_com(client, message: Message, _):
     carbon = await make_carbon(text)
     captions = "**ㅤ  🏓 ᴘɪɴɢ...ᴘᴏɴɢ...ᴘɪɴɢ✨\nㅤ  🎸 ᴅɪɴɢ...ᴅᴏɴɢ...ᴅɪɴɢ💞**"
     await message.reply_photo((carbon), caption=captions,
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            )
-        
-        ],
-        [
-            InlineKeyboardButton(
-                text="✦ ɢʀᴏᴜᴘ ✦", url=f"https://t.me/TG_FRIENDSS",
-            ),
-            InlineKeyboardButton(
-                text="✧ ᴍᴏʀᴇ ✧", url=f"https://t.me/VIP_CREATORS",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="❅ ʜᴇʟᴘ ❅", callback_data="settings_back_helper"
-            )
-        ],
-    ]
-    ),
+    
         )
     await response.delete()
