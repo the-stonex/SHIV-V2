@@ -37,9 +37,7 @@ async def join_watcher(_, message):
                 f"**ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs:** {count}\n"
                 f"**ᴀᴅᴅᴇᴅ ʙʏ:** {message.from_user.mention}"
             )
-            await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"😍ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ😍", url=f"https://t.me/{app.username}?startgroup=true")]
-         ]))
+            await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg,)
 
 
 
