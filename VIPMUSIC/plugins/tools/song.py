@@ -19,7 +19,7 @@ async def video_command(client: app, message: Message):
 
 async def download_media(message: Message, audio: bool = True):
     command_name = "audio" if audio else "video"
-    aux = await message.reply_text(f"**🔄 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐚𝐧𝐝 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 {command_name}...**")
+    aux = await message.reply_text(f"**ᴘʀᴏᴄᴇssɪɴɢ... {command_name}...**")
 
     if len(message.command) < 2:
         return await aux.edit(f"**Usage:** `/song` or `/audio` for audio, `/video` for video")
