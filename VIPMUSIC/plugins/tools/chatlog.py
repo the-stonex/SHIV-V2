@@ -7,11 +7,11 @@ from config import LOGGER_ID as LOG_GROUP_ID
 from VIPMUSIC import app  
 
 photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "",
+    "",
+    "",
+    "",
+    "",
 ]
 
 
@@ -21,14 +21,14 @@ async def join_watcher(_, message):
     for members in message.new_chat_members:
         if members.id == app.id:
             count = await app.get_chat_members_count(chat.id)
-            username = message.chat.username if message.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐆ʀᴏᴜᴘ"
+            username = message.chat.username if message.chat.username else "ᴘʀɪᴠᴀᴛᴇ ɢʀᴏᴜᴘ"
             msg = (
-                f"**📝𝐌ᴜsɪᴄ 𝐁ᴏᴛ 𝐀ᴅᴅᴇᴅ 𝐈ɴ 𝐀 #𝐍ᴇᴡ_𝐆ʀᴏᴜᴘ**\n\n"
-                f"**📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ:** {message.chat.title}\n"
-                f"**🍂𝐂ʜᴀᴛ 𝐈ᴅ:** {message.chat.id}\n"
-                f"**🔐𝐂ʜᴀᴛ 𝐔sᴇʀɴᴀᴍᴇ:** @{username}\n"
-                f"**📈𝐆ʀᴏᴜᴘ 𝐌ᴇᴍʙᴇʀs:** {count}\n"
-                f"**🤔𝐀ᴅᴅᴇᴅ 𝐁ʏ:** {message.from_user.mention}"
+                f"**ᴍᴜsɪᴄ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ ɴᴇᴡ ɢʀᴏᴜᴘ #ɴᴇᴡ_ɢʀᴏᴜᴘ**\n\n"
+                f"**ᴄʜᴀᴛ ɴᴀᴍᴇ:** {message.chat.title}\n"
+                f"**ᴄʜᴀᴛ ɪᴅ:** {message.chat.id}\n"
+                f"**ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ :** @{username}\n"
+                f"**ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs:** {count}\n"
+                f"**ᴀᴅᴅᴇᴅ ʙʏ:** {message.from_user.mention}"
             )
             await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton(f"😍ᴀᴅᴅ ᴍᴇ ɪɴ ᴍᴏʀᴇ😍", url=f"https://t.me/{app.username}?startgroup=true")]
@@ -57,15 +57,13 @@ async def _greet(_, message):
             count = await app.get_chat_members_count(chat.id)
 
             msg = (
-                f"**🌷𝐇ᴇʏ {message.from_user.mention} 𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ 𝐀 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳**\n\n"
-                f"**📝𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ:** {message.chat.title}\n➖➖➖➖➖➖➖➖➖➖➖\n"
-                f"**🔐𝐂ʜᴀᴛ 𝐔.𝐍:** @{message.chat.username}\n➖➖➖➖➖➖➖➖➖➖➖\n"
-                f"**💖𝐔ʀ 𝐈d:** {message.from_user.id}\n➖➖➖➖➖➖➖➖➖➖➖\n"
-                f"**✍️𝐔ʀ 𝐔.𝐍:** @{message.from_user.username}\n➖➖➖➖➖➖➖➖➖➖➖\n"
-                f"**👥𝐂ᴏᴍᴘʟᴇᴛᴇᴅ {count} 𝐌ᴇᴍʙᴇʀ𝐬🎉**"
+                f"**ʜᴇʏ {message.from_user.mention} 𝐖ᴇʟᴄᴏᴍᴇ ɪɴ  {message.chat.title} **\n\n"
+                f"**ᴄʜᴀᴛ ɴᴀᴍᴇ:** {message.chat.title}\n➖➖➖➖➖➖➖➖➖➖➖\n"
+                f"**ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ:** @{message.chat.username}\n➖➖➖➖➖➖➖➖➖➖➖\n"
+                f"**ᴜsᴇʀɪᴅ:** {message.from_user.id}\n➖➖➖➖➖➖➖➖➖➖➖\n"
+                f"**ᴜsᴇʀ ɴᴀᴍᴇ:** @{message.from_user.username}\n➖➖➖➖➖➖➖➖➖➖➖\n"
+                f"**ᴄᴏᴍᴘʟᴇᴛᴇᴅ {count} ᴍᴇᴍʙᴇʀs🎉**"
             )
-            await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"𝐊ɪᴅɴᴀᴘ 𝐌ᴇ", url=f"https://t.me/{app.username}?startgroup=true")]
-         ]))
+            await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, )
 
 #tagall
