@@ -9,12 +9,7 @@ from VIPMUSIC import app
 def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
 
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-            ],
+
             [
             InlineKeyboardButton(
                 text=_["P_B_1"],
