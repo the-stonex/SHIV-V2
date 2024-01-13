@@ -1,3 +1,4 @@
+
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -60,6 +61,10 @@ def help_pannel(_, START: Union[bool, int] = None):
                     text="🎸ᴠᴏɪᴄᴇ-ᴄʜᴀᴛ🎸",
                     callback_data="help_callback hb10",
                 ),
+                InlineKeyboardButton(
+                    text="★ᴛᴏᴏʟs★",
+                    callback_data="help_callback hb14",
+                ),
             ],
             [
            
@@ -73,13 +78,12 @@ def help_pannel(_, START: Union[bool, int] = None):
                     text="🍸sᴜᴅᴏ🍸",
                     callback_data="help_callback hb9",
                 ),
-            ],
-            [
                 InlineKeyboardButton(
                     text="⚜️sᴛᴀʀᴛ⚜️",
                     callback_data="help_callback hb11",
                 ),
             ],
+            
             mark,
         ]
     )
