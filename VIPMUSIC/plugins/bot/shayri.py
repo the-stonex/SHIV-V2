@@ -60,17 +60,7 @@ SHAYRI_COMMAND = ["gf", "bf", "shayri", "sari", "shari", "love"]
 async def help(client: Client, message: Message):
     await message.reply_text(
         text = random.choice(SHAYRI),
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "✨𝚂𝚄𝙿𝙿𝙾𝚁𝚃✨", url=f"https://t.me/TG_FRIENDSS"),
-                    InlineKeyboardButton(
-                        "✨𝙾𝙵𝙵𝙸𝙲𝙴✨", url=f"https://t.me/VIP_CREATORS")
-                    
-                ]
-            ]
-        ),
+        
     )
 
 @app.on_message(
@@ -80,15 +70,5 @@ async def help(client: Client, message: Message):
 async def help(client: Client, message: Message):
     await message.reply_text(
         text = random.choice(SHAYRI),
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "✨𝚂𝚄𝙿𝙿𝙾𝚁𝚃✨", url=f"https://t.me/TG_FRIENDSS"),
-                    InlineKeyboardButton(
-                        "✨𝙾𝙵𝙵𝙸𝙲𝙴✨", url=f"https://t.me/VIP_CREATORS")
-                    
-                ]
-            ]
-        ),
+        
     )
