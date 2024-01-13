@@ -9,12 +9,7 @@ from VIPMUSIC import app
 def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
 
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-            ],
+       
             [
             InlineKeyboardButton(
                 text=_["P_B_1"],
@@ -29,12 +24,7 @@ def track_markup(_, videoid, user_id, channel, fplay):
             InlineKeyboardButton(text="Replay", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="End", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            InlineKeyboardButton(
-                text=f"⛦ ᴊᴏɪɴ ⛦",
-              url="https://t.me/vip_creators",
-            ),
-        ],
+        
     ]
 
     return buttons
@@ -68,7 +58,12 @@ def stream_markup_timer(_, chat_id, played, dur):
 
     buttons  = [
 
-        
+        [
+            InlineKeyboardButton(
+                text=f"{dur} {bar} {played} ",
+                callback_data="GetTimer",
+            )
+        ],
           [
             InlineKeyboardButton(
                 text="II",
@@ -98,12 +93,7 @@ InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
 def stream_markup(_, chat_id):
     buttons  = [
 
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-          ],
+        
           [
             InlineKeyboardButton(
                 text="II",
@@ -208,12 +198,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
 def queue_markup(_, videoid, chat_id):
 
     buttons = [
-        [
-            InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
-            ),
-            ],
+        
             [
             InlineKeyboardButton(
                 text="II",
