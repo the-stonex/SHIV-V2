@@ -231,3 +231,4 @@ HELP_14 = """😻 **<u>ʜᴇʀᴇ ᴀʀᴇ sᴏᴍᴇ ᴛᴏᴏʟs ғᴇᴀᴛ�
 /givelink - ᴛʏᴘᴇ ᴛʜɪs ᴄᴍᴅ ɪɴ ɢʀᴏᴜᴘ ᴛᴏ ɢᴇᴛ ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇʟɪɴᴋ.
 /st :- ʀᴇᴘʟʏ sᴛɪᴄᴋᴇʀ ɪᴅ ᴛᴏ ɢᴇᴛ sᴛɪᴄᴋᴇʀ 
 ᴇx:- `/st CAACAgUAAxkBAAIDQGWg0-Nd9QhE_1NWhDsuiq4pw39lAAJJCgACIVxAVi-pg0MF7b9-NAQ`"""
+HELP_15 = """** 😇ᴄᴏᴍᴇ ᴛᴏ ᴅᴍ ᴛʜᴇɴ ᴛʏᴘᴇ /help ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴍᴇɴᴜ 😇**"""
