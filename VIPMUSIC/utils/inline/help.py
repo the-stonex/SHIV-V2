@@ -7,14 +7,14 @@ from VIPMUSIC import app
 
 
 def help_pannel(_, START: Union[bool, int] = None):
-    first = [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close")]
+    first = [InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close")]
     second = [
         InlineKeyboardButton(
-            text=_["BACK_BUTTON"],
+            text="ʙᴀᴄᴋ",
             callback_data=f"settingsback_helper",
         ),
         InlineKeyboardButton(
-            text=_["CLOSEMENU_BUTTON"], callback_data=f"close"
+            text="ᴄʟᴏsᴇ", callback_data=f"close"
         ),
         InlineKeyboardButton(
             text="ᴍᴏʀᴇ", callback_data="help_callback hb13"
@@ -95,11 +95,11 @@ def help_back_markup(_):
         [
             [
                 InlineKeyboardButton(
-                    text=_["BACK_BUTTON"],
+                    text="ʙᴀᴄᴋ",
                     callback_data=f"settings_back_helper",
                 ),
                 InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"], callback_data=f"close"
+                    text="ᴄʟᴏsᴇ", callback_data=f"close"
                 ),
                 InlineKeyboardButton(
                     text="ᴍᴏʀᴇ", callback_data="help_callback hb13"
