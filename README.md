@@ -56,4 +56,4 @@ Press `Ctrl+C` when you're done with editing env and `:wq` to save the env<br>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=♦𝙳𝙴𝙿𝙻𝙾𝚈+𝙾𝙽+𝙷𝙴𝚁𝙾𝙺𝚄♦;♨️+First+Deploy+MukeshRobot+Then+Deploy+This+Music+📍+Bot;🎭+start+is+Now +mstart+𝙱𝚈+vivek+kumar+🎭">
+<img src="https://readme-typing-svg.herokuapp.com?color=FF0000&width=420&lines=♦𝙳𝙴𝙿𝙻𝙾𝚈+𝙾𝙽+𝙷𝙴𝚁𝙾𝙺𝚄♦;♨️+First+Deploy+MukeshRobot+Then+Bot;🎭+start+is+Now +mstart+𝙱𝚈+vivek+kumar+🎭">
