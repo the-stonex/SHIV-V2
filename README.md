@@ -18,7 +18,7 @@
 </p>
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʟᴏᴄᴀʟ ʜᴏsᴛ/ ᴠᴘs 」─
-</h3>
+</h3><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 - Get your [Necessary Variables](https://github.com/Vivekkumar07089/Plugin-music-for-mukesh-bot/blob/master/sample.env)
 - Upgrade and Update by :
