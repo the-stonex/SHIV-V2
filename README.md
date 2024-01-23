@@ -3,7 +3,7 @@
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<h1> 𝗛𝗘𝗥𝗢𝗞𝗨 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗕𝗨𝗧𝗧𝗢𝗡 </h1>
+<h4> 𝗛𝗘𝗥𝗢𝗞𝗨 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗕𝗨𝗧𝗧𝗢𝗡 </h4>
 </h3>
 
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Vivekkumar07089/Plugin-music-for-mukesh-bot"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p>
