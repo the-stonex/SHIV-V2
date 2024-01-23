@@ -10,8 +10,7 @@ from VIPMUSIC import app
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-SHLOK = ["कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
-मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥"]
+SHLOK = ["कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥"]
 
 # Command
 SHLOK_COMMAND = ["Shloka", "Shlok", "shloka", "Gita", "shlok", "gita"]
