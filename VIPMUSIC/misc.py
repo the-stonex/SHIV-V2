@@ -39,7 +39,7 @@ XCB = [
 def dbb():
     global db
     db = {}
-    LOGGER(__name__).info(f"💖𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞 𝐋𝐨𝐚𝐝𝐞𝐝...")
+    LOGGER(__name__).info(f"💖Database loaded..")
 
 
 async def sudo():
@@ -58,7 +58,7 @@ async def sudo():
     if sudoers:
         for user_id in sudoers:
             SUDOERS.add(user_id)
-    LOGGER(__name__).info(f"📡𝐎𝐰𝐧𝐞𝐫 + 𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫𝐬 𝐋𝐨𝐚𝐝𝐞𝐝...")
+    LOGGER(__name__).info(f"Sudo users loaded...")
 
 
 def heroku():
@@ -68,8 +68,8 @@ def heroku():
             try:
                 Heroku = heroku3.from_key(config.HEROKU_API_KEY)
                 HAPP = Heroku.app(config.HEROKU_APP_NAME)
-                LOGGER(__name__).info(f"🌈𝐇𝐞𝐫𝐨𝐤𝐮 𝐀𝐩𝐩 𝐍𝐚𝐦𝐞 𝐋𝐨𝐚𝐝𝐞𝐝...")
+                LOGGER(__name__).info(f"Heroku app name loaded...")
             except BaseException:
                 LOGGER(__name__).warning(
-                      f"🏓𝐘𝐨𝐮 𝐇𝐚𝐯𝐞 𝐍𝐨𝐭 𝐅𝐢𝐥𝐥𝐞𝐝 𝐇𝐞𝐫𝐨𝐤𝐮 𝐀𝐩𝐢 𝐊𝐞𝐲 𝐀𝐧𝐝 𝐇𝐞𝐫𝐨𝐤𝐮 𝐀𝐩𝐩 𝐍𝐚𝐦𝐞 𝐂𝐨𝐫𝐫𝐞𝐜𝐭...🙃 "
+                      f"🏓You have not filled heroku adit key and app name correct "
     )
