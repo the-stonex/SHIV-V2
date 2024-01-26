@@ -61,7 +61,8 @@ class Userbot(Client):
 
         if config.STRING1:
             await self.one.start()
-            
+            try:
+                await self.one.join_chat("THE_VIP_BOY")
                 
             except:
                 pass
