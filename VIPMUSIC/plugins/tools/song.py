@@ -1,97 +1,87 @@
 import os
-import asyncio
-from pyrogram import filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from youtubesearchpython import VideosSearch
-import yt_dlp
 
+import requests
+import yt_dlp
+from pyrogram import filters
+from youtube_search import YoutubeSearch
 from ... import app
 
-DOWNLOAD_PATH = "downloads"
+from VIPMUSIC import SUPPORT_CHAT,BOT_NAME
 
-@app.on_message(filters.command(["song", "audio"], ["/", "!", "."]))
-async def audio_command(client: app, message: Message):
-    await download_media(message, audio=True)
 
-@app.on_message(filters.command(["video"], ["/", "!", "."]))
-async def video_command(client: app, message: Message):
-    await download_media(message, audio=False)
+def time_to_seconds(time):
+    stringt = str(time)
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
-async def download_media(message: Message, audio: bool = True):
-    command_name = "audio" if audio else "video"
-    aux = await message.reply_text(f"**ᴘʀᴏᴄᴇssɪɴɢ... {command_name}...**")
 
-    if len(message.command) < 2:
-        return await aux.edit(f"**Usage:** `/song` or `/audio` for audio, `/video` for video")
+@app.on_message(filters.command(["song", "music"]))
+def song(client, message):
 
+    message.delete()
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
+    chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+
+    query = ""
+    for i in message.command[1:]:
+        query += " " + str(i)
+    print(query)
+    m = message.reply("**» sᴇᴀʀᴄʜɪɴɢ, ᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...**")
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
-        media_name = message.text.split(None, 1)[1]
-        vid = VideosSearch(media_name, limit=1)
-        media_title = vid.result()["result"][0]["title"]
-        media_link = vid.result()["result"][0]["link"]
+        results = YoutubeSearch(query, max_results=1).to_dict()
+        link = f"https://youtube.com{results[0]['url_suffix']}"
+        # print(results)
+        title = results[0]["title"][:40]
+        thumbnail = results[0]["thumbnails"][0]
+        thumb_name = f"thumb{title}.jpg"
+        thumb = requests.get(thumbnail, allow_redirects=True)
+        open(thumb_name, "wb").write(thumb.content)
 
-        # Provide video quality options
-        quality_options = [
-            {"itag": "18", "label": "360p"},
-            {"itag": "22", "label": "720p"},
-            {"itag": "137", "label": "1080p"},
-            # Add more quality options as needed
-        ]
-
-        quality_buttons = [
-            InlineKeyboardButton(option["label"], callback_data=f'{option["itag"]}_{media_link}_{media_title}_{audio}')
-            for option in quality_options
-        ]
-
-        markup = InlineKeyboardMarkup([quality_buttons])
-        await aux.edit(f"**Choose the preferred {command_name} quality:**", reply_markup=markup)
+        duration = results[0]["duration"]
+        results[0]["url_suffix"]
+        views = results[0]["views"]
 
     except Exception as e:
-        await aux.edit(f"**Error:** {e}")
-
-async def download_video_with_quality(quality_itag, media_link, media_title, audio, aux):
-    ydl_opts = {
-        "format": f"bestvideo[height<=?1080][itag={quality_itag}]+bestaudio/best" if quality_itag.isnumeric() else "bestaudio/best",
-        "verbose": True,
-        "geo-bypass": True,
-        "nocheckcertificate": True,
-        "postprocessors": [
-            {
-                "key": "FFmpegVideoConvertor",
-                "preferedformat": "mp4"
-            }
-        ] if quality_itag.isnumeric() else [],
-        "outtmpl": f"{DOWNLOAD_PATH}/{media_title}.mp3" if audio else f"{DOWNLOAD_PATH}/{media_title}.mp4",
-    }
-
-    await aux.edit(f"**𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐯𝐢𝐝𝐞𝐨...**")
-
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        await asyncio.to_thread(ydl.download, [media_link])
-
-    await aux.edit(f"**𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠 𝐯𝐢𝐝𝐞𝐨...**")
-
-    return ydl_opts
-
-@app.on_callback_query(filters.regex(r'^\d+_.+_.+_(True|False)$'))
-async def process_callback_query(client, query):
+        m.edit(
+            "**😴 sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ.**\n\n» ᴍᴀʏʙᴇ ᴛᴜɴᴇ ɢᴀʟᴀᴛ ʟɪᴋʜᴀ ʜᴏ, ᴩᴀᴅʜᴀɪ - ʟɪᴋʜᴀɪ ᴛᴏʜ ᴋᴀʀᴛᴀ ɴᴀʜɪ ᴛᴜ !"
+        )
+        print(str(e))
+        return
+    m.edit("» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...\n\nᴩʟᴇᴀsᴇ ᴡᴀɪᴛ...")
     try:
-        quality_itag, media_link, media_title, audio_str = query.data.split('_', 3)
-        audio = audio_str.lower() == 'true'
-        aux = await query.message.reply_text(f"**𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐯𝐢𝐝𝐞𝐨...**")
-        ydl_opts = await download_video_with_quality(quality_itag, media_link, media_title, audio, aux)
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info_dict = ydl.extract_info(link, download=False)
+            audio_file = ydl.prepare_filename(info_dict)
+            ydl.process_info(info_dict)
+        rep = f"**ᴛɪᴛʟᴇ :** {title[:25]}\n**ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}`\n**ᴠɪᴇᴡs :** `{views}`\n**ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ »** {chutiya}"
+        secmul, dur, dur_arr = 1, 0, duration.split(":")
+        for i in range(len(dur_arr) - 1, -1, -1):
+            dur += int(dur_arr[i]) * secmul
+            secmul *= 60
+        message.reply_audio(
+            audio_file,
+            caption=rep,
+            performer=BOT_NAME,
+            thumb=thumb_name,
+            title=title,
+            duration=dur,
+        )
+        m.delete()
+    except Exception as e:
+        m.edit(
+            f"**» ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴇʀʀᴏʀ, ʀᴇᴩᴏʀᴛ ᴛʜɪs ᴀᴛ » [sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ](t.me/{SUPPORT_CHAT}) 💕**\n\**ᴇʀʀᴏʀ :** {e}"
+        )
+        print(e)
 
-        if audio:
-            await query.message.reply_audio(f"{DOWNLOAD_PATH}/{media_title}.mp3")
-        else:
-            await query.message.reply_video(f"{DOWNLOAD_PATH}/{media_title}.mp4")
-
-        try:
-            os.remove(f"{DOWNLOAD_PATH}/{media_title}.mp3") if audio else os.remove(f"{DOWNLOAD_PATH}/{media_title}.mp4")
-        except:
-            pass
-
-        await aux.delete()
-
+    try:
+        os.remove(audio_file)
+        os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+
+__mod_name__ = "Sᴏɴɢ"
+__help__ = """
+/song ᴛᴏ  ᴅᴏᴡɴʟᴏᴀᴅ   ᴀɴʏ  sᴏɴɢ 
+/music ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ  sᴏɴɢ"""
