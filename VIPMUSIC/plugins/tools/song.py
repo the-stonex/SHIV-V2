@@ -6,7 +6,7 @@ from pyrogram import filters
 from youtube_search import YoutubeSearch
 from ... import app
 
-from Config import SUPPORT_CHAT,BOT_NAME
+from config import SUPPORT_CHAT,BOT_NAME
 
 
 def time_to_seconds(time):
