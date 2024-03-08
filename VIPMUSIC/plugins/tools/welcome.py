@@ -66,7 +66,7 @@ class WelDatabase:
 
     async def add_wlcm(self, chat_id):
         if chat_id not in self.data:
-            self.data[chat_id] = {"state": "on"}  # Default state is "on"
+            self.data[chat_id] = {"state": "off"}  # Default state is "off"
 
     async def rm_wlcm(self, chat_id):
         if chat_id in self.data:
