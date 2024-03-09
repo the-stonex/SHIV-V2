@@ -99,5 +99,5 @@ async def start_pm(client, message: Message, _):
             else:
                 await app.send_message(
                     chat_id=config.LOGGER_ID,
-                    text=f"{message.from_user.mention}",
+                    text=".",
                 )
