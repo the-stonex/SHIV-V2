@@ -12,6 +12,7 @@ from VIPMUSIC.utils import seconds_to_min, time_to_seconds
 from VIPMUSIC.utils.channelplay import get_channeplayCB
 from VIPMUSIC.utils.decorators.language import languageCB
 from VIPMUSIC.utils.decorators.play import PlayWrapper
+from VIPMUSIC.utils.database import is_served_user
 from VIPMUSIC.utils.formatters import formats
 from VIPMUSIC.utils.inline import (
     botplaylist_markup,
