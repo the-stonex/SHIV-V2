@@ -23,6 +23,7 @@ async def chk_usr(_, message: Message):
         or lastname_before != message.from_user.last_name
     ):
         msg += f"""
+@admins
 ᴜsᴇʀ **{message.from_user.mention}**\n"""
     if usernamebefore != message.from_user.username:
         usernamebefore = f"@{usernamebefore}" if usernamebefore else "NO USERNAME"
