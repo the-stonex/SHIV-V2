@@ -63,7 +63,7 @@ async def chk_usr(_, message: Message):
             message.from_user.last_name,
         )
     if msg != "":
-        await message.reply(msg)
+        await message.reply_text(msg)
 
 
 @app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot)
