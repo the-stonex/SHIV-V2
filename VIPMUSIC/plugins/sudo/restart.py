@@ -54,7 +54,7 @@ async def handle_refresh_logs(_, query: CallbackQuery):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-@app.on_message(filters.command(["clog", "clogs", "carbonlog", "carbonlogs"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & SUDOERS)
+@app.on_message(filters.command(["clog", "clogs", "carbonlog", "carbonlogs"], prefixes=[".","!"]) & SUDOERS)
 @language
 async def log_(client, message, _):
     try:
