@@ -75,7 +75,7 @@ async def log_(client, message, _):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-@app.on_message(filters.command(["getlog", "logs", "getlogs"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & SUDOERS)
+@app.on_message(filters.command(["get_log", "logs", "getlogs"], prefixes=["/", "!", "."]) & SUDOERS)
 @language
 async def log_(client, message, _):
     try:
