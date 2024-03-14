@@ -30,7 +30,7 @@ async def chk_usr(_, message: Message):
             if message.from_user.username
             else "NO USERNAME"
         )
-        msg += """**ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ᴜsᴇʀɴᴀᴍᴇ** {bef} ᴛᴏ {aft}\n""".format(bef=usernamebefore, aft=usernameafter)
+        msg += """**ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ᴜsᴇʀɴᴀᴍᴇ ғʀᴏᴍ** {bef} **ᴛᴏ** {aft}\n""".format(bef=usernamebefore, aft=usernameafter)
         await add_userdata(
             message.from_user.id,
             message.from_user.username,
@@ -39,7 +39,7 @@ async def chk_usr(_, message: Message):
         )
     if first_name != message.from_user.first_name:
         msg += """
-**ᴄʜᴀɴɢᴇs ғɪʀsᴛ ɴᴀᴍᴇ** {bef} ᴛᴏ {aft}\n""".format(
+**ᴄʜᴀɴɢᴇs ғɪʀsᴛ ɴᴀᴍᴇ ғʀᴏᴍ** {bef} **ᴛᴏ** {aft}\n""".format(
             bef=first_name, aft=message.from_user.first_name
         )
         await add_userdata(
@@ -52,7 +52,7 @@ async def chk_usr(_, message: Message):
         lastname_before = lastname_before or "NO LAST NAME"
         lastname_after = message.from_user.last_name or "NO LAST NAME"
         msg += """
-**ᴄʜᴀɴɢᴇs ʟᴀsᴛ ɴᴀᴍᴇ ** {bef} ᴛᴏ {aft}\n
+**ᴄʜᴀɴɢᴇs ʟᴀsᴛ ɴᴀᴍᴇ ғʀᴏᴍ** {bef} **ᴛᴏ** {aft}\n
 """.format(
             bef=lastname_before, aft=lastname_after
         )
