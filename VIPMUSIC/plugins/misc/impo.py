@@ -2,12 +2,6 @@ from pyrogram import filters
 from pyrogram.types import Message
 from VIPMUSIC.utils.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
 from VIPMUSIC import app
-import random
-
-IMP_PICS = [
-"https://telegra.ph/file/6cd7dde536d6202f03445.jpg"
-]
-
 
 @app.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
 async def chk_usr(_, message: Message):
@@ -69,7 +63,7 @@ async def chk_usr(_, message: Message):
             message.from_user.last_name,
         )
     if msg != "":
-        await message.reply_photo(random.choice(IMP_PICS), caption=msg)
+        await message.reply(msg)
 
 
 @app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot)
