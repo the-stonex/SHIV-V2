@@ -2,6 +2,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from VIPMUSIC.utils.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
 from VIPMUSIC import app
+from VIPMUSIC.utils.vip_ban import admin_filter
 
 @app.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
 async def chk_usr(_, message: Message):
@@ -66,7 +67,7 @@ async def chk_usr(_, message: Message):
         await message.reply_text(msg)
 
 
-@app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot)
+@app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot & admin_filter)
 async def set_mataa(_, message: Message):
     if len(message.command) == 1:
         return await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴀɢᴇ : /pretender on|off**")
