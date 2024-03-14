@@ -48,7 +48,7 @@ async def tag_all_users(_,message):
             usernum += 1
             usertxt += f"[{m.user.first_name}](tg://user?id={m.user.id})   "
             if usernum == 20:
-                await app.send_message(message.chat.id,f'{text}\n{usertxt}')
+                await app.send_message(message.chat.id,f'{text}\n{usertxt}', disable_web_page_preview=True)
                 await asyncio.sleep(2)
                 usernum = 0
                 usertxt = ""                          
