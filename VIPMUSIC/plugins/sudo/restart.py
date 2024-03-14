@@ -84,7 +84,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & SUDOERS)
+@app.on_message(filters.command(["update", "gitpull"], prefixes=[".","!"]) & SUDOERS)
 @language
 async def update_(client, message, _):
     if await is_heroku():
