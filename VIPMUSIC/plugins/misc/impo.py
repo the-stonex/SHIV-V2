@@ -69,7 +69,7 @@ async def chk_usr(_, message: Message):
 @app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot)
 async def set_mataa(_, message: Message):
     if len(message.command) == 1:
-        return await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴀɢᴇ : /pretender ᴏɴ|ᴏғғ**")
+        return await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴀɢᴇ : /pretender on|off**")
     if message.command[1] == "on":
         cekset = await impo_on(message.chat.id)
         if cekset:
