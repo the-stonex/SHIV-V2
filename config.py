@@ -1,4 +1,4 @@
-import re
+inimport re
 from os import getenv
 
 from dotenv import load_dotenv
@@ -33,7 +33,7 @@ UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/Vivekkumar0708/Music-plugin-for-mukeshbot",
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "vivek")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
