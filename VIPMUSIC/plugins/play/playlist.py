@@ -16,7 +16,7 @@ from VIPMUSIC.utils.decorators.language import language, languageCB
 from VIPMUSIC.utils.inline.playlist import (botplaylist_markup,
                                               get_playlist_markup,
                                               warning_markup)
-from VIPMUSIC.utils.pastebin import Yukkibin
+from VIPMUSIC.utils.pastebin import VIPBin as Yukkibin
 from VIPMUSIC.utils.stream.stream import stream
 
 # Command
