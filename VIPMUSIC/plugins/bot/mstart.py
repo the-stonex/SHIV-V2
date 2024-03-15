@@ -7,6 +7,7 @@ from youtubesearchpython.__future__ import VideosSearch
 
 import config
 from VIPMUSIC import app
+from VIPMUSIC.plugins.play.playlist import del_plist_msg
 from VIPMUSIC.misc import _boot_
 from VIPMUSIC.plugins.sudo.sudoers import sudoers_list
 from VIPMUSIC.utils.database import (
@@ -52,6 +53,10 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name == "verify":
             await message.reply_text(f"ʜᴇʏ {mention_with_link},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.", disable_web_page_preview=True)
+
+        if name[0:3] == "del":
+            await del_plist_msg(client=client, message=message, _=_)
+
 
         if name == "mhelp":
             keyboard = help_pannel(_)
