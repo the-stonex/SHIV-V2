@@ -21,7 +21,7 @@ from VIPMUSIC.utils.stream.stream import stream
 
 # Command
 PLAYLIST_COMMAND = ["playlist"]
-DELETEPLAYLIST_COMMAND = ["delplaylist"]
+DELETEPLAYLIST_COMMAND = ["delplaylist","deleteplaylist"]
 
 
 @app.on_message(
