@@ -70,7 +70,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             )
         ],
        [
-            InlineKeyboardButton(text="✩", callback_data=f"add_playlist {videoid}"),
+            InlineKeyboardButton(text="ᴀᴅᴅ ᴛᴏ ᴘʟᴀʏʟɪsᴛ", callback_data=f"add_playlist {videoid}"),
         ],
         [
             InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
@@ -93,7 +93,7 @@ def stream_markup(_, videoid, chat_id):
 
 
         [
-            InlineKeyboardButton(text="✩", callback_data=f"add_playlist {videoid}"),
+            InlineKeyboardButton(text="ᴀᴅᴅ ᴛᴏ ᴘʟᴀʏʟɪsᴛ", callback_data=f"add_playlist {videoid}"),
         ],
 
         [
