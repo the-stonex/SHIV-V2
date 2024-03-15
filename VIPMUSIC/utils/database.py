@@ -40,7 +40,7 @@ pause = {}
 playmode = {}
 playtype = {}
 skipmode = {}
-
+playlist = []
 
 
 
