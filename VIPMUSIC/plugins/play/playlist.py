@@ -8,7 +8,6 @@ from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 
 from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
-from strings import get_command
 from VIPMUSIC import Carbon, YouTube, app
 from VIPMUSIC.utils.database import (delete_playlist, get_playlist,
                                        get_playlist_names,
@@ -21,8 +20,8 @@ from VIPMUSIC.utils.pastebin import Yukkibin
 from VIPMUSIC.utils.stream.stream import stream
 
 # Command
-PLAYLIST_COMMAND = get_command("PLAYLIST_COMMAND")
-DELETEPLAYLIST_COMMAND = get_command("DELETEPLAYLIST_COMMAND")
+PLAYLIST_COMMAND = ["playlist"]
+DELETEPLAYLIST_COMMAND = ["delplaylist"]
 
 
 @app.on_message(
