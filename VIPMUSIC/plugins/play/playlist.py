@@ -22,7 +22,7 @@ from VIPMUSIC.utils.stream.stream import stream
 PLAYLIST_COMMAND = ["playlist"]
 DELETEPLAYLIST_COMMAND = ["delplaylist","deleteplaylist"]
 
-@app.on_message(filters.command("playplaylist") & ~BANNED_USERS)
+@app.on_message(filters.command("playplaylist") & ~BANNED_USERS & filters.group)
 @languageCB
 async def play_playlist_command(client, message, _):
     mode = message.command[1] if len(message.command) > 1 else None
