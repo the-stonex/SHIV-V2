@@ -33,8 +33,7 @@ from config import BANNED_USERS, lyrical
     & filters.group
     & ~BANNED_USERS
 )
-@PlayWrapper
-# ... (existing code)
+@PlayWrapper
 
 async def play_commnd(
     client,
