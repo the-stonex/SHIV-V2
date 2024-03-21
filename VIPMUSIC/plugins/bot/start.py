@@ -49,6 +49,13 @@ async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
+        if name == "verify":
+            await message.reply_text(f"ʜᴇʏ {mention_with_link},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.", disable_web_page_preview=True)
+
+        if name[0:3] == "del":
+            await del_plist_msg(client=client, message=message, _=_)
+
+
         if name[0:4] == "help":
             keyboard = help_pannel(_)
             return await message.reply_photo(
