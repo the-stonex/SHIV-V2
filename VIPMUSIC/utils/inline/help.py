@@ -116,7 +116,7 @@ def private_help_panel(_):
             InlineKeyboardButton(text="ᴏᴘᴇɴ ʜᴇʀᴇ", callback_data="settings_back_helper")
         ],
              [
-            InlineKeyboardButton(text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ ", url=f"https://t.me/{app.username}?start=mhelp"),
+            InlineKeyboardButton(text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ ", url=f"https://t.me/{app.username}?start=help"),
         ],
 
 
