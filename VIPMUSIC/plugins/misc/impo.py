@@ -69,7 +69,7 @@ async def chk_usr(_, message: Message):
         msg += f"""User **{message.from_user.mention}**\n"""
     if usernamebefore != message.from_user.username:
         usernameafter = message.from_user.username or "NO USERNAME"
-        msg += """**changed her username from** {} **to** {}\n""".format(usernamebefore, usernameafter)
+        msg += """**changed her username from** @{} **to** @{}\n""".format(usernamebefore, usernameafter)
         await add_userdata(
             chat_id,
             message.from_user.id,
@@ -102,7 +102,7 @@ async def chk_usr(_, message: Message):
 @app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot & admin_filter)
 async def set_mataa(_, message: Message):
     if len(message.command) == 1:
-        return await message.reply("**Detect pretender usage: /pretender on|off**")
+        return await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴀɢᴇ:\n/pretender on|off**")
     chat_id = message.chat.id
     if message.command[1] == "on":
         cekset = await check_pretender(chat_id)
