@@ -41,22 +41,22 @@ async def impo_on(chat_id: int) -> None:
 async def impo_off(chat_id: int) -> None:
     await impdb.delete_one({"chat_id_toggle": chat_id})
 
-@app.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
+@app.on_message(filters.group & ~filters.bot & ~filters.via_bot,group=69)
 async def chk_usr(_, message: Message):
     chat_id = message.chat.id
     if message.sender_chat or not await check_pretender(chat_id):
         return
-    if not await usr_data(chat_id, message.from_user.id):
-        return await add_userdata(
+    user_id = message.from_user.id
+    user_data = await get_userdata(chat_id, user_id)
+    if not user_data:
+        await add_userdata(
             chat_id,
-            message.from_user.id,
+            user_id,
             message.from_user.username,
             message.from_user.first_name,
             message.from_user.last_name,
         )
-    user_data = await get_userdata(chat_id, message.from_user.id)
-    if not user_data:
-        return  # User data not found, handle accordingly
+        return
     usernamebefore = user_data.get("username", "")
     first_name = user_data.get("first_name", "")
     lastname_before = user_data.get("last_name", "")
@@ -66,38 +66,27 @@ async def chk_usr(_, message: Message):
         or first_name != message.from_user.first_name
         or lastname_before != message.from_user.last_name
     ):
-        msg += f"""User **{message.from_user.mention}**\n"""
-    if usernamebefore != message.from_user.username:
-        usernameafter = message.from_user.username or "NO USERNAME"
-        msg += """**changed her username from** @{} **to** @{}\n""".format(usernamebefore, usernameafter)
+        if first_name != message.from_user.first_name and lastname_before != message.from_user.last_name:
+            msg += f"""User **{message.from_user.mention}** changed her name from {first_name} {lastname_before} to {message.from_user.first_name} {message.from_user.last_name}\n"""
+        elif first_name != message.from_user.first_name:
+            msg += f"""User **{message.from_user.mention}** changed her first name from {first_name} to {message.from_user.first_name}\n"""
+        elif lastname_before != message.from_user.last_name:
+            msg += f"""User **{message.from_user.mention}** changed her last name from {lastname_before} to {message.from_user.last_name}\n"""
+
+        if usernamebefore != message.from_user.username:
+            msg += f"""User **{message.from_user.mention}** changed her username from @{usernamebefore} to @{message.from_user.username}\n"""
+
         await add_userdata(
             chat_id,
-            message.from_user.id,
+            user_id,
             message.from_user.username,
             message.from_user.first_name,
             message.from_user.last_name,
         )
-    if first_name != message.from_user.first_name:
-        msg += """**changed her first name from** {} **to** {}\n""".format(first_name, message.from_user.first_name)
-        await add_userdata(
-            chat_id,
-            message.from_user.id,
-            message.from_user.username,
-            message.from_user.first_name,
-            message.from_user.last_name,
-        )
-    if lastname_before != message.from_user.last_name:
-        lastname_after = message.from_user.last_name or "NO LAST NAME"
-        msg += """**changed her last name from** {} **to** {}\n""".format(lastname_before, lastname_after)
-        await add_userdata(
-            chat_id,
-            message.from_user.id,
-            message.from_user.username,
-            message.from_user.first_name,
-            message.from_user.last_name,
-        )
+
     if msg != "":
         await message.reply_text(msg)
+
 
 @app.on_message(filters.group & filters.command("pretender") & ~filters.bot & ~filters.via_bot & admin_filter)
 async def set_mataa(_, message: Message):
