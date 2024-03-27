@@ -6,6 +6,8 @@ from pyrogram.types import Message
 from VIPMUSIC import app
 from VIPMUSIC.utils.vip_ban import admin_filter
 
+
+
 mongo = MongoCli(MONGO_DB_URI).Rankings
 
 impdb = mongo.pretender
