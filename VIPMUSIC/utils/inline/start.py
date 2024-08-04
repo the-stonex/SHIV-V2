@@ -23,7 +23,7 @@ def private_panel(_):
         buttons.append(
             [
                 InlineKeyboardButton(text="📨 Cʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"),
-                InlineKeyboardButton(text="📨 Sᴜᴘᴘᴏʀᴛ", url=f"{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text="📨 Sᴜᴘᴘᴏʀᴛ", url=f"{SUPPORT_CHAT}"),
             ]
         )
     else:
