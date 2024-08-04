@@ -19,44 +19,44 @@ def help_pannel(_, START: Union[bool, int] = None):
         [
             [
                 InlineKeyboardButton(
-                    text="ᴀᴅᴍɪɴ",
+                    text="ᴀᴄᴛɪᴠᴇ",
                     callback_data="help_callback hb1",
                 ),
                 InlineKeyboardButton(
-                    text="ᴀᴜᴛʜ",
+                    text="ᴀᴅᴍɪɴ",
                     callback_data="help_callback hb2",
                 ),
                 InlineKeyboardButton(
-                    text="ʙʟᴏᴄᴋ",
+                    text="ᴀᴜᴛʜ",
                     callback_data="help_callback hb3",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ɢᴄᴀsᴛ",
+                    text="ʙʟᴏᴄᴋ",
                     callback_data="help_callback hb4",
                 ),
                 InlineKeyboardButton(
-                    text="ɢʙᴀɴ",
-                    callback_data="help_callback hb12",
+                    text="ʙᴏᴛ",
+                    callback_data="help_callback hb5",
                 ),
                 InlineKeyboardButton(
-                    text="ᴇxᴛʀᴀ",
-                    callback_data="help_callback hb5",
+                    text="ᴅᴇᴠ",
+                    callback_data="help_callback hb6",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="ᴘʟᴀʏʟɪsᴛ",
-                    callback_data="help_callback hb6",
+                    text="ɢ-ᴄᴀsᴛ",
+                    callback_data="help_callback hb7",
                 ),
                 InlineKeyboardButton(
-                    text="ᴠᴏɪᴄᴇ-ᴄʜᴀᴛ",
-                    callback_data="help_callback hb10",
+                    text="ᴘ-ʟɪsᴛ",
+                    callback_data="help_callback hb8",
                 ),
                 InlineKeyboardButton(
-                    text="ᴛᴏᴏʟs",
-                    callback_data="help_callback hb13",
+                    text="ᴘʟᴀʏ",
+                    callback_data="help_callback hb9",
                 ),
             ], 
             mark,
