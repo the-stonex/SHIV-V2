@@ -36,15 +36,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 # ________________________________________________________________________________#
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Vivekkumar0708/Music-plugin-for-mukeshbot",
+    "https://github.com/Vivekkumar-IN/VIP-MUSIC",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 # ________________________________________________________________________________#
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Quizess_prince")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Quizess_prince")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/TheTeamVivek")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/TheTeamVk")
 # ________________________________________________________________________________#
 # Set this to True if you want the assistant to automatically leave chats
 # after an interval
@@ -59,8 +59,8 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "")
 # ________________________________________________________________________________#
 # Maximum limit for fetching playlist's track from youtube, spotify, apple
 # links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", 100))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
+SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", 25))
 
 # ________________________________________________________________________________#
 
@@ -97,8 +97,10 @@ confirmer = {}
 # images
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org//file/d43ff4db1503f4089b6c6.jpg"
+    "START_IMG_URL",
+    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
 )
+
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
     "https://telegra.ph/file/91533956c91d0fd7c9f20.jpg",
