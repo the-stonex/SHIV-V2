@@ -1,7 +1,6 @@
  <h3> 𝗛𝗘𝗥𝗢𝗞𝗨 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗕𝗨𝗧𝗧𝗢𝗡 </h3>
  
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Vivekkumar-IN/VIP-MUSIC/"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"><img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Vivekkumar-IN/VIP-MUSIC/"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p> 
  
 - Get your [Necessary Variables](https://github.com/https://github.com/Vivekkumar-IN/VIP-MUSIC//master/sample.env)
 - Upgrade and Update by :
