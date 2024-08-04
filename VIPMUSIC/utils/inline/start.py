@@ -43,9 +43,9 @@ def private_panel(_):
             )
         ]
     )
-        buttons.append(
-            [
-                InlineKeyboardButton(text="👤 Oᴡɴᴇʀ", user_id=OWNER_ID),
-            ]
-        )
+    buttons.append(
+        [
+            InlineKeyboardButton(text="👤 Oᴡɴᴇʀ", user_id=OWNER_ID),
+        ]
+    )
     return buttons
