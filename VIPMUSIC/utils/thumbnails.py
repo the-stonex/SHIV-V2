@@ -68,8 +68,19 @@ async def get_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        
-        colors = ["white", "red", "orange", "yellow", "green", "cyan", "azure", "blue", "violet", "magenta", "pink"]
+        colors = [
+            "white",
+            "red",
+            "orange",
+            "yellow",
+            "green",
+            "cyan",
+            "azure",
+            "blue",
+            "violet",
+            "magenta",
+            "pink",
+        ]
         border = random.choice(colors)
         youtube = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
@@ -81,11 +92,11 @@ async def get_thumb(videoid):
         background = changeImageSize(1280, 720, logox)
         # image2 = image1.convert("RGBA")
         # background = image2.filter(filter=ImageFilter.BoxBlur(1))
-        #enhancer = ImageEnhance.Brightness(background)
-        #background = enhancer.enhance(0.9)
-        #draw = ImageDraw.Draw(background)
-        #arial = ImageFont.truetype("VIPMUSIC/assets/font2.ttf", 30)
-        #font = ImageFont.truetype("VIPMUSIC/assets/font.ttf", 30)
+        # enhancer = ImageEnhance.Brightness(background)
+        # background = enhancer.enhance(0.9)
+        # draw = ImageDraw.Draw(background)
+        # arial = ImageFont.truetype("VIPMUSIC/assets/font2.ttf", 30)
+        # font = ImageFont.truetype("VIPMUSIC/assets/font.ttf", 30)
         # draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
         """
         draw.text(

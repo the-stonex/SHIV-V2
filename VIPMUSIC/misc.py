@@ -71,5 +71,5 @@ def heroku():
                 LOGGER(__name__).info(f"Heroku app name loaded...")
             except BaseException:
                 LOGGER(__name__).warning(
-                      f"🏓You have not filled heroku adit key and app name correct "
-    )
+                    f"🏓You have not filled heroku adit key and app name correct "
+                )

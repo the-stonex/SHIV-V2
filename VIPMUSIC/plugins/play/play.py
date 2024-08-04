@@ -28,13 +28,23 @@ from config import BANNED_USERS, lyrical
 
 
 @app.on_message(
-   filters.command(["play", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"] ,prefixes=["/", "!","."])
-            
+    filters.command(
+        [
+            "play",
+            "vplay",
+            "cplay",
+            "cvplay",
+            "playforce",
+            "vplayforce",
+            "cplayforce",
+            "cvplayforce",
+        ],
+        prefixes=["/", "!", "."],
+    )
     & filters.group
     & ~BANNED_USERS
 )
-@PlayWrapper
-
+@PlayWrapper
 async def play_commnd(
     client,
     message: Message,

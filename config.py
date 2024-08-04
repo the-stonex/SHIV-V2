@@ -5,61 +5,62 @@ from dotenv import load_dotenv
 from pyrogram import filters
 
 load_dotenv()
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Get this value from my.telegram.org/apps
 
 API_ID = int(getenv("API_ID"))
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 API_HASH = getenv("API_HASH")
 # Get your token from @BotFather on Telegram.
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 BOT_TOKEN = getenv("BOT_TOKEN")
-#________________________________________________________________________________#
-BOT_NAME  = getenv("BOT_NAME")
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
+BOT_NAME = getenv("BOT_NAME")
+# ________________________________________________________________________________#
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID"))
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID"))
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",   "https://github.com/Vivekkumar0708/Music-plugin-for-mukeshbot",
+    "UPSTREAM_REPO",
+    "https://github.com/Vivekkumar0708/Music-plugin-for-mukeshbot",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Quizess_prince")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Quizess_prince")
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Get this credentials from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "")
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "")
 
 
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 # Maximum limit for fetching playlist's track from youtube, spotify, apple links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", 100))
 
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 
 # Telegram audio and video file size limit (in bytes)
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
@@ -75,13 +76,12 @@ STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
 
 
-#     _    __      _______ _____    ___  __ _    _  _____ _____ _____   _____   ____ _______ 
+#     _    __      _______ _____    ___  __ _    _  _____ _____ _____   _____   ____ _______
 #    | |  / /     |__   __|  __ \  |__ \/_ | |  | |/ ____|_   _/ ____| |  __ \ / __ \__   __|
-#    | | / /         | |  | |__) |    ) || | |  | | (___   | || |      | |__) | |  | | | |   
-#    | |/ /          | |  |  ___/    / / | | |  | |\___ \  | || |      |  _  /| |  | | | |   
-#    | |\ \          | |  | |       / /_ | | |__| |____) |_| || |____  | | \ \| |__| | | |   
+#    | | / /         | |  | |__) |    ) || | |  | | (___   | || |      | |__) | |  | | | |
+#    | |/ /          | |  |  ___/    / / | | |  | |\___ \  | || |      |  _  /| |  | | | |
+#    | |\ \          | |  | |       / /_ | | |__| |____) |_| || |____  | | \ \| |__| | | |
 #    |_| \_\         |_|  |_|      |____||_|\____/|_____/|_____\_____| |_|  \_\\____/  |_|
-
 
 
 BANNED_USERS = filters.user()
@@ -90,9 +90,9 @@ lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 
-#images
+# images
 
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://graph.org//file/d43ff4db1503f4089b6c6.jpg"
@@ -157,7 +157,7 @@ SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg",
 )
 
-#________________________________________________________________________________#
+# ________________________________________________________________________________#
 
 
 def time_to_seconds(time):

@@ -6,12 +6,8 @@ from VIPMUSIC import app
 
 def start_panel(_):
     buttons = [
-        
         [
-            
-            InlineKeyboardButton(
-                text="☢ sᴇᴛᴛɪɴɢ ☢", callback_data="settings_helper"
-            ),
+            InlineKeyboardButton(text="☢ sᴇᴛᴛɪɴɢ ☢", callback_data="settings_helper"),
         ],
         [
             InlineKeyboardButton(text="✡ ɢʀᴏᴜᴘ ✡", url=config.SUPPORT_CHAT),
@@ -33,7 +29,9 @@ def private_panel(_):
             InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ🥀", url=config.SUPPORT_CHANNEL),
         ],
         [
-            InlineKeyboardButton(text="۞ ғᴇᴀᴛᴜʀᴇs ۞", callback_data="settings_back_helper")
+            InlineKeyboardButton(
+                text="۞ ғᴇᴀᴛᴜʀᴇs ۞", callback_data="settings_back_helper"
+            )
         ],
     ]
     return buttons

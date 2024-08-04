@@ -1,4 +1,5 @@
 from VIPMUSIC.utils.mongo import db
+
 HEHE = "6815918609"
 
 afkdb = db.afk

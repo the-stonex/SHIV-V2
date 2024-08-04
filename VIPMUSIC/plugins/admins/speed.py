@@ -109,4 +109,4 @@ async def del_back_playlist(client, CallbackQuery, _):
     await mystic.edit_text(
         text=_["admin_34"].format(speed, CallbackQuery.from_user.mention),
         reply_markup=close_markup(_),
-  )
+    )

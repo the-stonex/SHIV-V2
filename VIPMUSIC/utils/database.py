@@ -24,7 +24,6 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 
 
-
 # Shifting to memory [mongo sucks often]
 active = []
 activevideo = []
@@ -41,8 +40,6 @@ playmode = {}
 playtype = {}
 skipmode = {}
 playlist = []
-
-
 
 
 # Playlist
