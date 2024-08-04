@@ -1,11 +1,10 @@
 from datetime import datetime
 from pyrogram import filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message
 from VIPMUSIC import app
 from VIPMUSIC.core.call import VIP
 from VIPMUSIC.utils import bot_sys_stats
 from VIPMUSIC.utils.decorators.language import language
-from VIPMUSIC.utils.inline import supp_markup
 from config import BANNED_USERS
 import aiohttp
 import asyncio

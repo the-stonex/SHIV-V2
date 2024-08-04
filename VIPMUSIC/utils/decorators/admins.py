@@ -1,7 +1,5 @@
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-import re
-from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()

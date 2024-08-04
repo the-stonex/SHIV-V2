@@ -4,9 +4,7 @@ from pyrogram import Client, filters
 from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
-import re
-from os import getenv
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message
 from dotenv import load_dotenv
 from pyrogram import filters
 

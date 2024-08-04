@@ -1,9 +1,6 @@
 from pyrogram import Client
-import re
 from os import getenv
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from dotenv import load_dotenv
-from pyrogram import filters
 
 load_dotenv()
 import config

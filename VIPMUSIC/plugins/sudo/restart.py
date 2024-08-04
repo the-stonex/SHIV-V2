@@ -10,7 +10,6 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 from pyrogram import filters
 import aiohttp
 from pyrogram.types import (
-    ReplyKeyboardMarkup,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )

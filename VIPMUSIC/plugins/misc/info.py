@@ -1,11 +1,6 @@
-import asyncio, os, time, aiohttp
-from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
-from asyncio import sleep
 from VIPMUSIC import app
-from pyrogram import filters, Client, enums
-from pyrogram.enums import ParseMode
-from pyrogram.types import *
+from pyrogram import filters, enums
 from typing import Union, Optional
 
 

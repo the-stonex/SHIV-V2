@@ -1,7 +1,7 @@
 import os
 from inspect import getfullargspec
 from pyrogram.types import Message
-from pyrogram import Client, filters
+from pyrogram import filters
 from VIPMUSIC import app
 from VIPMUSIC.misc import SUDOERS
 from VIPMUSIC.utils.database import get_client

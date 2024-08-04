@@ -1,5 +1,4 @@
 import time
-import random
 from pyrogram import filters
 from VIPMUSIC.plugins.play.playlist import del_plist_msg
 from pyrogram.enums import ChatType

@@ -28,7 +28,7 @@ LOGGER_ID = int(getenv("LOGGER_ID"))
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID"))
 # ________________________________________________________________________________#
-## Fill these variables if you're deploying on heroku.
+# Fill these variables if you're deploying on heroku.
 # Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # Get it from http://dashboard.heroku.com/account
@@ -46,7 +46,8 @@ GIT_TOKEN = getenv(
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Quizess_prince")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Quizess_prince")
 # ________________________________________________________________________________#
-# Set this to True if you want the assistant to automatically leave chats after an interval
+# Set this to True if you want the assistant to automatically leave chats
+# after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
 # ________________________________________________________________________________#
@@ -56,7 +57,8 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "")
 
 
 # ________________________________________________________________________________#
-# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
+# Maximum limit for fetching playlist's track from youtube, spotify, apple
+# links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", 100))
 
@@ -76,7 +78,7 @@ STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
 
 
-#     _    __      _______ _____    ___  __ _    _  _____ _____ _____   _____   ____ _______
+#     _    __      _______ _____    ___  __ _    _  _____ _____ _____   __
 #    | |  / /     |__   __|  __ \  |__ \/_ | |  | |/ ____|_   _/ ____| |  __ \ / __ \__   __|
 #    | | / /         | |  | |__) |    ) || | |  | | (___   | || |      | |__) | |  | | | |
 #    | |/ /          | |  |  ___/    / / | | |  | |\___ \  | || |      |  _  /| |  | | | |
