@@ -26,33 +26,13 @@ from strings import get_string
 
 
 
-YUMI_PICS = [
-"https://telegra.ph/file/5d33ec7c387985d78352b.jpg",
-"https://telegra.ph/file/3095010ce25b4c55f9823.jpg",
-"https://telegra.ph/file/62de4fe21cc8575298dd9.jpg",
-"https://telegra.ph/file/62de4fe21cc8575298dd9.jpg",
-"https://telegra.ph/file/6f93dcaa2c5943253c149.jpg",
-"https://telegra.ph/file/cbbfe284b42c403a6bbbd.jpg",
-"https://telegra.ph/file/6f93dcaa2c5943253c149.jpg",
-"https://telegra.ph/file/2e909e7dd709b380918f7.jpg",
-"https://telegra.ph/file/7f0490e53d3cce83504af.jpg",
-"https://telegra.ph/file/842c0a55f982d30fe4f48.jpg",
-"https://telegra.ph/file/585cfc47e2240f2ca3dce.jpg",
-"https://telegra.ph/file/2329f335339f63b2bbd5c.jpg"
-
-]
-
-
-
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
-        if name == "verify":
-            await message.reply_text(f"ʜᴇʏ {mention_with_link},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.", disable_web_page_preview=True)
-
+ 
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
 
@@ -164,7 +144,7 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    random.choice(YUMI_PICS),
+                    config.START_IMG_URL,
                     caption=_["start_3"].format(
                         message.from_user.first_name,
                         app.mention,
