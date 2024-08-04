@@ -6,7 +6,7 @@ from pyrogram import filters
 from youtube_search import YoutubeSearch
 from ... import app
 
-from config import SUPPORT_CHAT, BOT_NAME
+from config import SUPPORT_CHAT
 
 
 def time_to_seconds(time):
@@ -62,7 +62,7 @@ def song(client, message):
         message.reply_audio(
             audio_file,
             caption=rep,
-            performer=BOT_NAME,
+            performer=app.name,
             thumb=thumb_name,
             title=title,
             duration=dur,
@@ -79,9 +79,4 @@ def song(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
-
-
-__mod_name__ = "Sᴏɴɢ"
-__help__ = """
-/song ᴛᴏ  ᴅᴏᴡɴʟᴏᴀᴅ   ᴀɴʏ  sᴏɴɢ 
-/music ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴʏ  sᴏɴɢ"""
+ 
