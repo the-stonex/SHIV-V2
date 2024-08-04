@@ -73,8 +73,6 @@ def help_back_markup(_):
                     text="ʙᴀᴄᴋ",
                     callback_data=f"settings_back_helper",
                 ),
-            ],
-            [
                 InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
             ],
         ]
