@@ -62,7 +62,7 @@ async def helper_cb(client, CallbackQuery, _):
     if cb == "hb6":
         if CallbackQuery.from_user.id not in SUDOERS:
             return await CallbackQuery.answer(
-                "ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀ sᴜᴅᴏ ᴜsᴇʀ"in, show_alert=True
+                "ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀ sᴜᴅᴏ ᴜsᴇʀ", show_alert=True
             )
         else:
             await CallbackQuery.edit_message_text(helpers.HELP_6, reply_markup=keyboard)
