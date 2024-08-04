@@ -12,7 +12,7 @@ def help_pannel(_, START: Union[bool, int] = None):
             text="ʙᴀᴄᴋ",
             callback_data=f"settingsback_helper",
         ),
-        InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data=f"close"),
+       
     ]
     mark = second if START else first
     upl = InlineKeyboardMarkup(
