@@ -1,6 +1,6 @@
 from datetime import datetime
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup
 from VIPMUSIC import app
 from VIPMUSIC.core.call import VIP
 from VIPMUSIC.utils import bot_sys_stats
@@ -32,5 +32,5 @@ async def ping_com(client, message: Message, _):
             DISK,
             pytgping,
         ),
-        reply_markup=botplaylist_markup(_),
+        reply_markup=InlineKeyboardMarkup(botplaylist_markup(_)),
         )
