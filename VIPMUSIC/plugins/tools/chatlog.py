@@ -5,7 +5,7 @@ from pyrogram.types import (
 )
 from config import LOGGER_ID as LOG_GROUP_ID
 from VIPMUSIC import app
-
+from VIPMUSIC.utils.database import delete_served_chat
 
 @app.on_message(filters.new_chat_members, group=2)
 async def join_watcher(_, message):
@@ -41,3 +41,4 @@ async def on_left_chat_member(_, message: Message):
         chat_id = message.chat.id
         left = f"✫ <b><u>#𝐋ᴇғᴛ_𝐆ʀᴏᴜᴘ</u></b> ✫\n\n𝐂ʜᴀᴛ 𝐓ɪᴛʟᴇ : {title}\n\n𝐂ʜᴀᴛ 𝐈ᴅ : {chat_id}\n\n𝐑ᴇᴍᴏᴠᴇᴅ 𝐁ʏ : {remove_by}\n\n𝐁ᴏᴛ : @{app.username}"
         await app.send_message(LOG_GROUP_ID, left)
+        await delete_served_chat(message.chat.id)
