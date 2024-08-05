@@ -12,14 +12,19 @@ from VIPMUSIC.utils.database import (
 )
 
 
+@app.on_message(filters.command(["ac"]) & SUDOERS)
+async def ac(c, m):
+    audio = len(await get_active_chats())
+    video = len(await get_active_video_chats())
+    await m.reply_text(f"ᴀᴜᴅɪᴏ - {audio}\nᴠɪᴅᴇᴏ - {video}")
+    
 @app.on_message(
     filters.command(
         ["activevc", "activevoice"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
     )
     & SUDOERS
 )
-async def activevc(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
+ic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
