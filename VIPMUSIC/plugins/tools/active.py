@@ -21,9 +21,10 @@ async def ac(c, m):
 @app.on_message(
     filters.command(
         ["activevc", "activevoice"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
-        )
-        & SUDOERS
     )
+    & SUDOERS
+)
+async def active_voice_chats(message):
     ic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
     text = ""
@@ -35,25 +36,22 @@ async def ac(c, m):
             await remove_active_chat(x)
             continue
         try:
-            if (await app.get_chat(x)).username:
-                user = (await app.get_chat(x)).username
+            chat = await app.get_chat(x)
+            if chat.username:
+                user = chat.username
                 text += f"<b>{j + 1}.</b> <a href=https://t.me/{user}>{unidecode(title).upper()}</a> [<code>{x}</code>]\n"
             else:
-                text += (
-                    f"<b>{j + 1}.</b> {unidecode(title).upper()} [<code>{x}</code>]\n"
-                )
+                text += f"<b>{j + 1}.</b> {unidecode(title).upper()} [<code>{x}</code>]\n"
             j += 1
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
+        await ic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
     else:
         await mystic.edit_text(
             f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
-
-
 @app.on_message(
     filters.command(
         ["activev", "activevideo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
