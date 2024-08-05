@@ -6,11 +6,9 @@ from VIPMUSIC.core.call import VIP
 from VIPMUSIC.utils import bot_sys_stats
 from VIPMUSIC.utils.inline.extras import botplaylist_markup
 from VIPMUSIC.utils.decorators.language import language
-from config import BANNED_USERS
+from config import BANNED_USERS, PING_IMG_URL
 import aiohttp
 import asyncio
-from io import BytesIO
-from PIL import Image, ImageEnhance  # Add these imports
 
  
 @app.on_message(filters.command(["ping", "alive"]) & ~BANNED_USERS & filters.group)
