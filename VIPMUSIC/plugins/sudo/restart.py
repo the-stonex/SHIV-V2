@@ -41,58 +41,9 @@ async def make_carbon(code):
     image.name = "carbon.png"
     return image
 
-
-# Modify the existing code...
-@app.on_callback_query(filters.regex(r"refresh_logs"))
-async def handle_refresh_logs(_, query: CallbackQuery):
-    try:
-        # Read the content of the log file
-        with open("log.txt", "r") as log_file:
-            logs_content = log_file.read()
-
-        # Create a new carbon image
-        carbon_image = await make_carbon(logs_content)
-
-        # Edit the original message with the new carbon image
-        await query.message.edit_photo(
-            carbon_image, caption="**🥀ᴛʜɪs ɪs ɴᴇᴡ ʀᴇғʀᴇsʜᴇᴅ ʟᴏɢs✨**"
-        )
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
+ 
 @app.on_message(
-    filters.command(["clog", "clogs", "carbonlog", "carbonlogs"], prefixes=[".", "!"])
-    & SUDOERS
-)
-@language
-async def log_(client, message, _):
-    try:
-        # Read the content of the log file
-        with open("log.txt", "r") as log_file:
-            logs_content = log_file.read()
-
-        # Create a carbon image
-        carbon_image = await make_carbon(logs_content)
-
-        # Create an inline keyboard with a refresh button
-        refresh_button = InlineKeyboardButton(
-            "🥀ʀᴇғʀᴇsʜ✨", callback_data="refresh_logs"
-        )
-        keyboard = InlineKeyboardMarkup([[refresh_button]])
-
-        # Reply to the message with the carbon image and the inline keyboard
-        await message.reply_photo(
-            carbon_image, caption="**🥀ᴛʜɪs ɪs ʏᴏᴜʀ ʟᴏɢs✨**", reply_markup=keyboard
-        )
-
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-
-@app.on_message(
-    filters.command(["get_log", "logs", "getlogs"], prefixes=["/", "!", "."]) & SUDOERS
+    filters.command(["get_log", "logs", "getlogs"]) & SUDOERS
 )
 @language
 async def log_(client, message, _):
@@ -102,7 +53,7 @@ async def log_(client, message, _):
         await message.reply_text(_["server_1"])
 
 
-@app.on_message(filters.command(["update", "gitpull"], prefixes=[".", "!"]) & SUDOERS)
+@app.on_message(filters.command(["update", "gitpull", "up"]) & SUDOERS)
 @language
 async def update_(client, message, _):
     if await is_heroku():
