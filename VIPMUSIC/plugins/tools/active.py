@@ -21,10 +21,10 @@ async def ac(c, m):
 @app.on_message(
     filters.command(
         ["activevc", "activevoice"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]
+        )
+        & SUDOERS
     )
-    & SUDOERS
-)
-ic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
+    ic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
