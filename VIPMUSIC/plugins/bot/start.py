@@ -43,7 +43,7 @@ async def start_pm(client, message: Message, _):
             )
         if name[:8] == "connect_":
             r = name[8:]
-            parts = r.split("_")
+            parts = r.split("to")
             userid = parts[0]
             chatid = parts[1]
             return await message.reply_text(f"User ID: {userid}\nChat ID: {chatid}")
