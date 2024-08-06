@@ -24,7 +24,7 @@ async def ac(c, m):
     )
     & SUDOERS
 )
-async def active_voice_chats(message):
+async def active_voice_chats(client, message):
     ic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
     text = ""
