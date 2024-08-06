@@ -143,7 +143,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         await music_off(chat_id)
         await VIP.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            _["admin_2"].format(mention), reply_markup=close_markup(_)
+            _["admin_2"].format(mention),
         )
     elif command == "Resume":
         if await is_music_playing(chat_id):
@@ -152,16 +152,15 @@ async def del_back_playlist(client, CallbackQuery, _):
         await music_on(chat_id)
         await VIP.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            _["admin_4"].format(mention), reply_markup=close_markup(_)
+            _["admin_4"].format(mention),
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
         await VIP.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
-            _["admin_5"].format(mention), reply_markup=close_markup(_)
+            _["admin_5"].format(mention),
         )
-        await CallbackQuery.message.delete()
     elif command == "Skip" or command == "Replay":
         check = db.get(chat_id)
         if command == "Skip":
@@ -179,7 +178,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         text=_["admin_6"].format(
                             mention, CallbackQuery.message.chat.title
                         ),
-                        reply_markup=close_markup(_),
+                        
                     )
                     try:
                         return await VIP.stop_stream(chat_id)
@@ -194,7 +193,6 @@ async def del_back_playlist(client, CallbackQuery, _):
                         text=_["admin_6"].format(
                             mention, CallbackQuery.message.chat.title
                         ),
-                        reply_markup=close_markup(_),
                     )
                     return await VIP.stop_stream(chat_id)
                 except:
@@ -221,7 +219,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await CallbackQuery.message.reply_text(
                     text=_["admin_7"].format(title),
-                    reply_markup=close_markup(_),
+                    
                 )
             try:
                 image = await YouTube.thumbnail(videoid, True)
