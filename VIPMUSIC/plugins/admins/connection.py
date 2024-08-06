@@ -16,5 +16,5 @@ async def auth(client, message: Message):
     chat_id = message.chat.id
    # re = await connect_to_chat(message.from_user.id, message.chat.id)
     
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴄʜᴀᴛ ", url=f"http://t.me/{app.username}?start=connect_{user_id}_{chat_id}")]])
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴄʜᴀᴛ ", url=f"http://t.me/{app.username}?start=connect_{user_id}to{chat_id}")]])
     await message.reply_text("ᴛᴀᴘ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ ɪɴ ᴘᴍ", reply_markup = markup)
