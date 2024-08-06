@@ -1,7 +1,9 @@
 import time
 from pyrogram import filters
+from pyrogram.errors import ChannelInvalid
 from VIPMUSIC.plugins.play.playlist import del_plist_msg
-from pyrogram.enums import ChatType
+from pyrogram.enums import ChatType, ChatMembersFilter
+
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -44,7 +46,19 @@ async def start_pm(client, message: Message, _):
             )
         if name[:8] == "connect_":
             chat_id = name[8:]
-            await message.reply(f"Chat ID: {chat_id}")
+            try:
+                title = (await app.get_chat(chat_id)).title
+            except ChannelInvalid:
+                return await message.reply_text(f"ʟᴏᴏʟ ʟɪᴋᴇ ɪ ᴀᴍ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ ɪᴅ {chat_id}")
+            
+            admin_ids = [ member.user.id async for member in app.get_chat_members(chat_id, filter=ChatMembersFilter.ADMINISTRATORS)]
+            if message.from_user.id not in admin_ids:
+                return await message.reply_text(f"sᴏʀʀʏ sɪʀ ʙᴜᴛ ɪ ᴛʜɪɴᴋ ᴛʜᴀᴛ ʏᴏᴜ ɴᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ᴏғ {title} ")
+            a = await connect_to_chat(message.from_user.id, chat_id)
+            if a:
+                await message.reply_text(f"ʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ {title}")
+            else:
+                await message.reply_text(a)
 
         
         if name[0:3] == "sud":
