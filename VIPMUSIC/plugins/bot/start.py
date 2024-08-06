@@ -41,6 +41,9 @@ async def start_pm(client, message: Message, _):
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
+        if name[:8] == "connect_":
+            chat_id = name[8:]
+            return await message.reply(f"Chat ID: {chat_id}")
         if name[0:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
             if await is_on_off(2):
