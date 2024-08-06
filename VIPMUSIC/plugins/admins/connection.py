@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.enums import ChatMembersFilter
 from VIPMUSIC import app
-from VIPMUSIC utils.database import connect_to_chat
+from VIPMUSIC.utils.database import connect_to_chat
 from VIPMUSIC.utils.decorators import AdminActual
 from config import BANNED_USERS
 
