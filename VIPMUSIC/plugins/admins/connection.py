@@ -12,7 +12,7 @@ async def auth(client, message: Message):
     admin_ids = [ member.user.id async for member in app.get_chat_members(message.chat.id, filter=ChatMembersFilter.ADMINISTRATORS)]
     if not message.from_user.id in admin_ids:
         return 
-    re = await connect_to_chat(message.from_user.id, message.chat.id)
-    if re:
-        markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴄʜᴀᴛ ", url=f"http://t.me/{app.username}?start=connect_{message.chat.id}")]])
-        await message.reply_text("ᴛᴀᴘ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ ɪɴ ᴘᴍ", reply_markup = markup)
+   # re = await connect_to_chat(message.from_user.id, message.chat.id)
+    
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴄʜᴀᴛ ", url=f"http://t.me/{app.username}?start=connect_{message.chat.id}")]])
+    await message.reply_text("ᴛᴀᴘ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴛʜɪs ᴄʜᴀᴛ ɪɴ ᴘᴍ", reply_markup = markup)
