@@ -442,7 +442,7 @@ class YTM:
             
                     return file_path
         response =  requests.get(f"https://pipedapi-libre.kavin.rocks/streams/{vidid}").json()
-        loop = asyncio.get_running_loop()
+        '''loop = asyncio.get_running_loop()
         if songvideo:
             url = response.get("videoStreams", [])[-1]['url']
             fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_video_dl(url)))
@@ -460,6 +460,19 @@ class YTM:
             direct = True
             downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(audio_dl(url)))
         
+        return downloaded_file, direct'''
+        auxi =  response.get("audioStreams", [])[4]["url"]  
+        vud = response.get("videoStreams", [])[-1]["url"]
+        if songvideo:
+            return vud
+        elif songaudio:
+            return auxi
+        elif video:
+            direct = True
+            downloaded_file = vud
+        else:
+            downloaded_file = auxi
+            direct = True
         return downloaded_file, direct
-            
+        
        
