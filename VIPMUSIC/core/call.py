@@ -17,7 +17,7 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from VIPMUSIC import LOGGER, YouTube, app
+from VIPMUSIC import LOGGER, YouTube, app, YTB
 from VIPMUSIC.misc import db
 from VIPMUSIC.utils.database import (
     add_active_chat,
@@ -417,7 +417,7 @@ class Call(PyTgCalls):
                     )
                 except:
                     try:
-                        file_path, direct = await YouTube.download(
+                        file_path, direct = await YTB.download(
                             videoid,
                             mystic,
                             videoid=True,
