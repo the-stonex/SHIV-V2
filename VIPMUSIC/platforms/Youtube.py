@@ -443,39 +443,27 @@ class YTM:
                     return file_path
         response =  requests.get(f"https://pipedapi-libre.kavin.rocks/streams/{vidid}").json()
         loop = asyncio.get_running_loop()
-        '''if songvideo:
+        
+        if songvideo:
+            
             url = response.get("videoStreams", [])[-1]['url']
             fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_video_dl(url)))
             return fpath
+            
         elif songaudio:
-            url = response.get("videoStreams", [])[-1]['url']
-            fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_audio_dl(url)))
-            return fpath
+            return response.get("audioStreams", [])[4]["url"]  
+
+        
         elif video:
             url = response.get("videoStreams", [])[-1]['url']
             direct = True
             downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
-        else:
-            url = response.get("audioStreams", [])[4]['url']
-            direct = True
-            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(audio_dl(url)))
+
         
-        return downloaded_file, direct'''
-        auxi =  response.get("audioStreams", [])[4]["url"]  
-        vud = response.get("videoStreams", [])[-1]["url"]
-        if songvideo:
-            fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_video_dl(vud)))
-            return fpath
-
-        elif songaudio:
-            return auxi
-
-        elif video:
-            direct = True
-            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(vud)))
         else:
-            downloaded_file = auxi
             direct = True
+            downloaded_file = response.get("audioStreams", [])[4]['url']
+
+        
         return downloaded_file, direct
-        
        
