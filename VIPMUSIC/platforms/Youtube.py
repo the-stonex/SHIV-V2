@@ -455,10 +455,10 @@ class YT-NOYTDLP:
             url = response.get("videoStreams", [])[-1]['url']
             direct = True
             downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
-    else:
-        url = response.get("audioStreams", [])[4]['url']
-        direct = True
-        downloaded_file = await loop.run_in_executor(None, audio_dl)
-    return downloaded_file, direct
+        else:
+            url = response.get("audioStreams", [])[4]['url']
+            direct = True
+            downloaded_file = await loop.run_in_executor(None, audio_dl)
+        return downloaded_file, direct
             
        
