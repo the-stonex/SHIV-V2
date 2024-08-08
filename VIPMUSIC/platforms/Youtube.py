@@ -443,12 +443,21 @@ class YT-NOYTDLP:
         response =  requests.get("https://pipedapi-libre.kavin.rocks/streams/LLF3GMfNEYU").json()
 
         if songvideo:
-            url = response.get("audioStreams", [])[4]['url']
+            url = response.get("videoStreams", [])[-1]['url']
             fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_video_dl(url)))
             return fpath
         elif songaudio:
-            url = response.get("audioStreams", [])[4]['url']
+            url = response.get("videoStreams", [])[-1]['url']
             fpath = await loop.run_in_executor(None, lambda: asyncio.run(song_audio_dl(url)))
             return fpath
+        elif video:
+            url = response.get("videoStreams", [])[-1]['url']
+            direct = True
+            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
+    else:
+        url = response.get("audioStreams", [])[4]['url']
+        direct = True
+        downloaded_file = await loop.run_in_executor(None, audio_dl)
+    return downloaded_file, direct
             
        
