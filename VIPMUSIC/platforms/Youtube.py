@@ -458,7 +458,8 @@ class YTM:
         else:
             url = response.get("audioStreams", [])[4]['url']
             direct = True
-            downloaded_file = await loop.run_in_executor(None, audio_dl)
+            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(audio_dl(url)))
+        
         return downloaded_file, direct
             
        
