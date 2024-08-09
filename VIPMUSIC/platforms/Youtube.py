@@ -386,9 +386,9 @@ class YTM:
                             chunk = await response.content.read(1024*1024*1024)
                             if not chunk:
                                 break
-                            file.write(chunk)'''
+                            file.write(chunk)
             
-                    return file_path
+                    return file_path'''
         
         async def video_dl(url):
             async with httpx.AsyncClient() as client:
