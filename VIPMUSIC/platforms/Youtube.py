@@ -391,7 +391,7 @@ class YTM:
                     return file_path'''
         
         async def video_dl(url):
-            async with httpx.AsyncClient() as client:
+            async with httpx.AsyncClient(http2=True) as client:
                 response = await client.get(url)
                 file_path = os.path.join("downloads", f"{vidid}.mp4")
                 with open(file_path, 'wb') as file:
