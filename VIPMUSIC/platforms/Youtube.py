@@ -404,8 +404,8 @@ class YTM:
 
         
         else:
-            downloaded_file = True
-            url = response.get("audioStreams", [])[4]["url"]  
+            direct = True
+            downloaded_file = response.get("audioStreams", [])[4]["url"]  
         
         return downloaded_file, direct
        
