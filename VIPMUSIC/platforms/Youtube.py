@@ -394,9 +394,8 @@ class YTM:
             return fpath
             
         elif songaudio:
-             url = response.get("audioStreams", [])[4]["url"]  
-             fpath = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp3")))
-             return fpath
+             return response.get("audioStreams", [])[4]["url"]  
+            
         
         elif video:
             url = response.get("videoStreams", [])[-1]['url']
@@ -405,10 +404,8 @@ class YTM:
 
         
         else:
-            direct = True
+            downloaded_file = True
             url = response.get("audioStreams", [])[4]["url"]  
-            downloaded_file = downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp3")))
-
         
         return downloaded_file, direct
        
