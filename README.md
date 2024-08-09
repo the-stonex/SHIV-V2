@@ -1,8 +1,8 @@
  <h3> 𝗛𝗘𝗥𝗢𝗞𝗨 𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗕𝗨𝗧𝗧𝗢𝗡 </h3>
  
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/Vivekkumar-IN/VIP-MUSIC/"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p> 
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/MISH0009/SHIV-MUSIC"> <img src="https://telegra.ph/file/b60b4cb88bca1cf437062.jpg" width="220" height="38.45"/></a></p> 
  
-- Get your [Necessary Variables](https://github.com/https://github.com/Vivekkumar-IN/VIP-MUSIC//master/sample.env)
+- Get your [Necessary Variables](https://github.com/MISH0009/SHIV-MUSIC//master/sample.env)
 - Upgrade and Update by :
 `sudo apt-get update && sudo apt-get upgrade -y`
 - Install Ffmpeg by :
@@ -14,7 +14,7 @@
 - Install Node js by :
 `curl -fssL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install nodejs -y && npm i -g npm`
 - Clone the repository by :
-`git clone https://github.com/THE-VIP-BOY-OP/VIP-MUSIC && cd VIP-MUSIC`
+`git clone https://github.com/MISH0009/SHIV-MUSIC && cd SHIV-MUSIC`
 - Install requirements by :
 `pip3 install -U -r requirements.txt`
 - Fill your variables in the env by :
