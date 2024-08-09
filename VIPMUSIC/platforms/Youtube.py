@@ -12,7 +12,7 @@ from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
 from VIPMUSIC.utils.database import is_on_off
-from VIPMUSIC.utils.formatters import time_to_seconds
+from VIPMUSIC.utils.formatters import time_to_seconds, download_file
 
 
 
@@ -384,28 +384,25 @@ class YTM:
                     file.write(response.content)
                 return file_path
              
-        response =  requests.get(f"https://pipedapi-libre.kavin.rocks/streams/{vidid}").json()
+        
         loop = asyncio.get_running_loop()
         
         if songvideo:
             
-            url = response.get("videoStreams", [])[-1]['url']
-            fpath = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp4")))
-            return fpath
+            return await loop.run_in_executor(None, download_file,vidid,False)
             
         elif songaudio:
-             return response.get("audioStreams", [])[4]["url"]  
+            return await loop.run_in_executor(None, download_file,vidid)
             
         
         elif video:
-            url = response.get("videoStreams", [])[-1]['url']
             direct = True
-            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp4")))
+            downloaded_file = await loop.run_in_executor(None, download_file,vidid,False)
 
         
         else:
             direct = True
-            downloaded_file = response.get("audioStreams", [])[4]["url"]  
+            downloaded_file = await loop.run_in_executor(None, download_file,vidid)
         
         return downloaded_file, direct
        
