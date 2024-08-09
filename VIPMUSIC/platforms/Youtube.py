@@ -375,25 +375,11 @@ class YTM:
             pattern = r"(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=|embed\/|v\/|live_stream\?stream_id=|(?:\/|\?|&)v=)?([^&\n]+)"
             match = re.search(pattern, link)
             vidid = match.group(1)
-
-                    
-        '''async def video_dl(url):
-            async with aiohttp.ClientSession() as session:
-                async with session.request(method='GET', url=url, allow_redirects=True) as response:
-                    file_path = os.path.join("downloads", f"{vidid}.mp4")
-                    with open(file_path, "wb") as file:
-                        while True:
-                            chunk = await response.content.read(1024*1024*1024)
-                            if not chunk:
-                                break
-                            file.write(chunk)
-            
-                    return file_path'''
         
-        async def video_dl(url):
+        async def download(url, format):
             async with httpx.AsyncClient(http2=True) as client:
                 response = await client.get(url)
-                file_path = os.path.join("downloads", f"{vidid}.mp4")
+                file_path = os.path.join("downloads", f"{vidid}.{format}")
                 with open(file_path, 'wb') as file:
                     file.write(response.content)
                 return file_path
@@ -404,22 +390,24 @@ class YTM:
         if songvideo:
             
             url = response.get("videoStreams", [])[-1]['url']
-            fpath = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
+            fpath = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp4")))
             return fpath
             
         elif songaudio:
-            return response.get("audioStreams", [])[4]["url"]  
-
+             url = response.get("audioStreams", [])[4]["url"]  
+             fpath = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp3")))
+             return fpath
         
         elif video:
             url = response.get("videoStreams", [])[-1]['url']
             direct = True
-            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(video_dl(url)))
+            downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp4")))
 
         
         else:
             direct = True
-            downloaded_file = response.get("audioStreams", [])[4]['url']
+            url = response.get("audioStreams", [])[4]["url"]  
+            downloaded_file = downloaded_file = await loop.run_in_executor(None, lambda: asyncio.run(download(url, "mp3")))
 
         
         return downloaded_file, direct
