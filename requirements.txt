@@ -7,7 +7,7 @@ dnspython
 ffmpeg-python
 future==0.18.3
 gitpython
-httpx
+httpx[http2]
 heroku3
 hachoir
 motor==3.3.2
